@@ -51,7 +51,7 @@ api.interceptors.response.use(
                   path: "/",
                 }
               );
-              // api.defaults.headers["Authorization"] = `Bearer ${token}`;
+              api.defaults.headers["Authorization"] = `Bearer ${token}`;
 
               failedRequesQueue.forEach((request) => request.onSuccess(token));
               failedRequesQueue = [];
@@ -77,7 +77,7 @@ api.interceptors.response.use(
           });
         });
       } else {
-        //signOut();
+        signOut();
       }
     }
     return Promise.reject(error);

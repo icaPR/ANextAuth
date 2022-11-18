@@ -47,7 +47,7 @@ export function AuthProvider({ children }: PropsAuthProvider) {
           setUser({ email, roles, permissions });
         })
         .catch(() => {
-          // signOut();
+          signOut();
         });
     }
   }, []);
